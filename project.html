@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<script src="mountains.js"></script>
+<script src="https://use.fontawesome.com/49f47ca0ff.js"></script>
+<link rel="stylesheet" type="text/css" href="projectstylesheet.css" />
+<link rel="stylesheet" type="text/css" href="font-awesome.min.css" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Home</title>
+
+</head>
+
+<body>
+
+<ul>
+  <li><a href="project.html">Home</a></li>
+  <li><a href="projectpageone.html">Gallery</a></li>
+  <li><a href="projectpagetwo.html">About</a></li>
+  </ul>
+
+<h1>Cooper's Cleaning Services of Phoenix, Arizona</h1>
+
+
+<p>Welcome to Clean!</p>
+
+
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 4</div>
+    <img src="image1.jpg" style="width:75%">
+    <div class="text">Construction Cleanups</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 4</div>
+    <img src="image2.jpg" style="width:75%">
+    <div class="text">Composite</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 4</div>
+    <img src="image3.jpg" style="width:75%">
+    <div class="text">Tile</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="image4.jpg" style="width:75%">
+    <div class="text">Carpet</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+
+<div>
+</div>
+
+<table>
+
+<script>
+  function buildTable(data) {
+    var table = document.createElement("table");
+    table.setAttribute('class','center');
+    var fields = Object.keys(data[0]);
+    var headRow = document.createElement("tr");
+    fields.forEach(function(field) {
+      var headCell = document.createElement("th");
+      headCell.textContent = field;
+      headRow.appendChild(headCell);
+    });
+    table.appendChild(headRow);
+
+    data.forEach(function(object) {
+      var row = document.createElement("tr");
+      fields.forEach(function(field) {
+        var cell = document.createElement("td");
+        cell.textContent = object[field];
+        if (typeof object[field] == "number")
+          cell.style.textAlign = "center";
+        row.appendChild(cell);
+      });
+      table.appendChild(row);
+    });
+
+    return table;
+  }
+
+  document.body.appendChild(buildTable(SERVICES));
+</script>
+
+</table>
+<button id="myBtn">Login</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+	
+	<form id="regForm" action="">
+	<div class="tab">Name:
+	  <p><input placeholder="First name..." ></p>
+	</div>
+	<div class="tab">Phone:
+	  <p><input placeholder="Phone number..." ></p>
+	</div>
+	<div class="tab">email:
+	  <p><input placeholder="email ..." ></p>
+	</div>
+		<div class="tab">service requested:
+	  <p><input placeholder="services ..." ></p>
+	</div>
+	</form>
+  </div>
+
+</div>
+
+
+<div class="social">
+<span style=class="fa-stack fa-lg">
+   <i class="fa fa-twitter fa-stack-2x"></i>
+</span>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-facebook-square fa-stack-2x" aria-hidden="true"></i>
+  </span>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-yelp fa-stack-2x" aria-hidden="true"></i>
+  </span>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-pinterest-square fa-stack-2x" aria-hidden="true"></i>
+  </span>
+</div>
+
+
+
+
+
+<script>
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+</script>
+
+
+<script src="project.js"></script>
+<script src="mountains.js"></script>
+
+
+
+
+</body>
+</html>

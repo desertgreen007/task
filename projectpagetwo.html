@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<title>About</title>
+<link rel="stylesheet" type="text/css" href="mapstylesheet.css" />
+<link rel="stylesheet" type="text/css" href="projectstylesheet.css" />
+</head>
+
+  <body>
+   <ul>
+  <li><a href="project.html">Home</a></li>
+  <li><a href="projectpageone.html">Gallery</a></li>
+  <li><a href="projectpagetwo.html">About</a></li>
+  </ul>
+
+    <h3>Cooper's Cleaning Services of Phoenix, Arizona</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 33.448, lng: -112.074};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=
+AIzaSyA3D2ppV2DdJ72xpPSloPGmp6DFW0eOGlo&callback=initMap">
+    </script>
+  </body>
+</html>
